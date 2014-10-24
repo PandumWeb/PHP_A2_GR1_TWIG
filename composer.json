@@ -1,0 +1,14 @@
+{
+    "name": "lor/php_a2_gr1_twig",
+    "require": {
+        "twig/twig": "~1.16"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "LOR",
+            "email": "sorialor@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}

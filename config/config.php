@@ -8,7 +8,8 @@ return [
     'database' => [
         'hostname' => 'localhost',
         'username' => 'root',
-        'password' => 'toor', // Windows => '' || Mac => 'root'
+        'password' => 'root', // Windows => '' || Mac => 'root'
+        'password' => 'root', // Windows => '' || Mac => 'root'
         'dbname'   => 'blog',
     ],
 ];

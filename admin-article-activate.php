@@ -14,6 +14,6 @@ if (!empty($_GET['id']) && !empty($_GET['activate'])) {
     enableArticle($link, $id, $type);
 }
 
-header('Location: admin-article-list.php');
+header('Location: admin-article-list.html.twig');
 
 require __DIR__.'/_footer.php';

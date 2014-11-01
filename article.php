@@ -10,12 +10,14 @@ if (!empty($_GET['id'])) {
     $id = (int) $_GET['id'];
     $article = getArticle($link, $id);
     if (!$article) {
-        header('Location: index.php');
+        header('Location:index.php');
     }
 } else {
-    header('Location: index.php');
+    header('Location:index.php');
 }
 
 require __DIR__.'/_footer.php';
 
-include __DIR__.'/template/article.php';
+echo $twig->render('article.html.twig', [
+    'article' => $article,
+]);

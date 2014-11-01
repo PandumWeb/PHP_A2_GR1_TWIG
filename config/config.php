@@ -9,7 +9,6 @@ return [
         'hostname' => 'localhost',
         'username' => 'root',
         'password' => 'root', // Windows => '' || Mac => 'root'
-        'password' => 'root', // Windows => '' || Mac => 'root'
         'dbname'   => 'blog',
     ],
 ];

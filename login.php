@@ -6,6 +6,10 @@
 
 require __DIR__.'/_header.php';
 
+
+$missing_credential= '';
+$credential_error ='';
+
 if (isConnected()) {
     header('Location: index.php');
 }
@@ -26,6 +30,9 @@ if (isset($_POST['loginSubmit'])) {
     }
 }
 
-include __DIR__.'/template/login.php';
+echo $twig->render('login.html.twig', [
+    'missing_credential' => $missing_credential,
+    'credential_error' => $credential_error,
+]);
 
 require __DIR__.'/_footer.php';

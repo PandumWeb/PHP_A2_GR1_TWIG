@@ -11,6 +11,6 @@ if (!empty($_GET['id'])) {
     removeArticle($link, $id);
 }
 
-header('Location: admin-article-list.php');
+header('Location: admin-article-list.html.twig');
 
 require __DIR__.'/_footer.php';

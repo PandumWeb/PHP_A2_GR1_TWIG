@@ -23,7 +23,7 @@ if (!empty($_GET['id'])) {
 
         updateArticle($link, $id, $update);
 
-        header('Location: admin-article-list.php');
+        header('Location: admin-article-list.html.twig');
     }
 
     $article = getArticle($link, $id);

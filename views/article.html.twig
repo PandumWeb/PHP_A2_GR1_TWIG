@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    {{ parent() }} -My article
+{% endblock %}
+{% block content %}
+<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<header>
+    <h1>{{ article.title }}</h1>
+   <img title="{{ article.title }}" alt="{{ article.title }}" src="{{ article.image }}">
+    <p>Written by {{ article.user_id }} on {{ article.created_at }}.</p>
+   </header>
+<div class="content">
+    <p>{{ article.content }}</p>
+    </div>
+<footer>
+    <p>Posted in category:<a href="{{ article.category_id }}"></a>{{ article.category_id }}</p>
+   <p><a href="/tag?id={{ article.category_id }}"><span class="label label-primary">Primary</span></a></p>
+    <a href="index.php"><button type="button" class="btn btn-primary">Back</button></a>
+    </footer>
+
+</article>
+
+{% endblock %}
+
+
+
+
+

@@ -24,11 +24,16 @@ $articles = getArticles($link, null, ($currentPage-1)*$perPage, $perPage);
 
 //include __DIR__.'/template/articles.php';
 
-
+$total='';
+$lastPage='';
 
 echo $twig->render('articles.html.twig', [
     'articles' => $articles,
+    'perPage' => $perPage,
+    'nbArticles' => $nbArticles,
+    'currentPage' => $currentPage,
+    'nbPages' => $nbPages,
+
+
 ]);
-
-
 

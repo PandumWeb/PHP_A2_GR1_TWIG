@@ -5,7 +5,7 @@
  {% block content %}
 
     {% for article in articles %}
-
+        {% if 0 == i%3 %}
         <div class="row">
             <article class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                 <header>
@@ -22,21 +22,27 @@
                     <p><a href="/tag?id={{ article.category_id }}"><span class="label label-primary">Primary</span></a></p>
                 </footer>
             </article>
+
+            {% if 2 == i%3 %}
         </div>
-
+            {% set i = i+1 %}
+            {% endif %}
+        {% endif %}
     {% endfor %}
-     <ul class="pagination">
-         <li {{ 1 == currentPage }}  'class="disabled"' {{ var is null }}><a href="index.php?p={{ currentPage-1 }}">&leftarrow;</a></li>
-        i = 1
-         <?php while ($i <= $nbPages) { ?>
-         <li <?php echo $i == $currentPage ? 'class="active"' : null; ?>><a href="index.php?p=<?php echo $i; ?>"><?php echo $i; ?></a></li>
-         <?php $i++; ?>
-         <?php } ?>
 
-         <li <?php echo $nbPages == $currentPage ? 'class="disabled"' : null; ?>><a href="index.php?p=<?php echo $currentPage+1; ?>">&rightarrow;</a></li>
-     </ul>
-     </ul>
+
+     <div class="col-md-6">
+         <ul class="pagination">
+             <li {% if 1 == currentPage %} class="disabled" {% endif %} ><a href="index.php?p={{ currentPage-1 }}">&leftarrow;</a></li>
+             {% set i = 1 %}
+             {% for i in 1..nbPages+1 %}
+                 <li {% if i == currentPage %}class="active" {% endif %}><a href="index.php?p={{ i }}">{{  i }}</a></li>
+                 {% set i = i+1 %}
+             {% endfor %}
+             <li {% if currentPage == lastPage+1 %}class="disabled"{% endif %}><a href="index.php?p={{ currentPage+1 }}">&rightarrow;</a></li>
+         </ul>
+     </div>
+
 
  {% endblock %}
-
 
